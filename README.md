@@ -51,6 +51,13 @@ posición 1 valor 4.31 /*(1)*/
 
 ![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/66f87cdd-4356-4ee8-b1ed-9061e3194309)
 
+double array[0.0, 0.0, 0.0, 0.0]
+
+[5.2, 10.0, 51.5, 0.0]
+
+array[3]= array[2] + array[1] /*valor de la celda 2 sumada a la celda 1*/
+array[3]= 61.5
+
 
 
 
