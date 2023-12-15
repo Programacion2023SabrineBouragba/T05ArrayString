@@ -59,7 +59,24 @@ array[3]= array[2] + array[1] /*valor de la celda 2 sumada a la celda 1*/
 array[3]= 61.5
 
 
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/977e6c41-411e-4660-9ccd-7a8d06a97765)
+
+char[] dam= {'D', 'A', 'M'};
+
+a. el array tiene 3 índices/celdas
+b. dam[2]= 'A'
+c. dam[3]= 'M'
 
 
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/26ce2424-7e6c-45c2-b3e6-e49c182ce822)
+
+otra manera de iniciarlo sería esta:
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/e5b0acfc-72e0-41d8-bb48-a686acd4ebdc)
+
+
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/9b4dc235-f4a0-423e-9f77-8f004148f51c)
+
+imprime lo siguiente:
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/31d27198-7f72-4657-a966-4bb57221a4b9)
 
 
