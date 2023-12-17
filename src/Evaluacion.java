@@ -126,8 +126,34 @@ public class Evaluacion {
 
 
     public int totalSuspensos(){
-        if(listaNotas!= null){
-
+        if(listaNotas!=null){
+            int suspensos=0;
+            for (int i=0; i< listaNotas.length; i++){
+                if(listaNotas[i]<5){
+                    suspensos++;
+                }
+            }
+            return suspensos;
+        }else{
+            return -1;
         }
     }
+
+    public int totalAprobados(){
+        if(listaNotas!=null){
+            int aprobados=0;
+            for (int i=0; i< listaNotas.length; i++){
+                if(listaNotas[i]>=5){
+                    aprobados++;
+                }
+            }
+            return aprobados;
+        }else{
+            return -1;
+        }
+    }
+
+
+
+
 }
