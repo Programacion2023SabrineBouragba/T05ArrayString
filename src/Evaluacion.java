@@ -155,5 +155,47 @@ public class Evaluacion {
 
 
 
+    public void  camiarNota(double nota, int numAlumno){
+        if(listaNotas!=null){
+            System.out.println("El array de notas es nulo");
+
+        } else if (numAlumno<0 || nota>= listaNotas.length) {
+            System.out.println("El número de alumno inválido.");
+        }else{
+            listaNotas[numAlumno]=nota;
+            System.out.println("Nota cambiada");
+        }
+    }
+
+
+    public int mejorAlumno(){
+        if (listaNotas!=null && listaNotas.length>0){
+            int mejor=0;
+            for(int i=1; i<listaNotas.length; i++){
+                if(listaNotas[i]>listaNotas[mejor]){
+                    mejor=i;
+                }
+            }
+            return mejor;
+        }else{
+            return -1;
+        }
+    }
+
+    public int peorAlumno(){
+        if (listaNotas!=null && listaNotas.length>0){
+            int peor=0;
+            for(int i=1; i<listaNotas.length; i++){
+                if(listaNotas[i]>listaNotas[peor]){
+                    peor=i;
+                }
+            }
+            return peor;
+        }else{
+            return -1;
+        }
+    }
+
+
 
 }
