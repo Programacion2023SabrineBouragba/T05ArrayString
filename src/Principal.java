@@ -20,14 +20,6 @@ public class Principal {
 
                 case 5:
 
-                case 6:
-
-                case 7:
-
-                case 8:
-
-                case 9:
-
                 default:
             }
 
@@ -55,18 +47,15 @@ public class Principal {
             System.out.println("3. Números primos");
             System.out.println("4. Sumar n enteros");
             System.out.println("5. Multiplicar n enteros");
-            System.out.println("6. Potencia");
-            System.out.println("7. Pirámide");
-            System.out.println("8. Fibonacci");
-            System.out.println("9. Salir");
+
 
             /*pedimos al usuario el numero
-             si el numero introducido es menor que 1 o mayor que 9
+             si el numero introducido es menor que 1 o mayor que 5
              volver a mostrar el menu*/
             System.out.print("Introduce una opción del menú: ");
             opcion=sc.nextInt();
 
-        }while (opcion<1 || opcion>9);
+        }while (opcion<1 || opcion>5);
 
         return opcion;
     }

@@ -60,4 +60,74 @@ public class Evaluacion {
             }
         }
     }
+
+
+
+
+    //sobrecarga
+    public String toString(){
+        String resultado= "Nombre asignatura: " + nombreAsignatura + "\n";
+
+        if(listaNotas!= null){
+            //.length para saber la lomgitud del array
+            for (int i=0; i<listaNotas.length; i++){
+                resultado+= "Alumno" + (i+1)+ ": " + listaNotas[i] + "\n";
+            }
+        }else{
+            resultado+= "Sin notas de momento";
+        }
+
+        return resultado;
+    }
+
+
+
+
+    public double media(){
+        if(listaNotas!= null){
+            double suma=0;
+            for(int i=0; i<listaNotas.length; i++){
+                suma+= listaNotas[i];
+            }
+            return suma/ listaNotas.length;
+        }else{
+            return -1;
+        }
+    }
+
+    public double minimo() {
+        if (listaNotas != null) {
+            double min = listaNotas[0];
+            for (int i = 1; i < listaNotas.length; i++) {
+                if (listaNotas[i] < min) {
+                    min = listaNotas[i];
+                }
+            }
+            return min;
+        } else {
+            return -1;
+        }
+    }
+
+
+    public double maximo() {
+        if (listaNotas != null) {
+            double max = listaNotas[0];
+            for (int i = 1; i < listaNotas.length; i++) {
+                if (listaNotas[i] > max) {
+                    max = listaNotas[i];
+                }
+            }
+            return max;
+        } else {
+            return -1;
+        }
+    }
+
+
+    public int totalSuspensos(){
+        if(listaNotas!= null){
+
+        }
+    }
 }
