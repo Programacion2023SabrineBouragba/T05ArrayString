@@ -30,7 +30,7 @@ public class Evaluacion {
     }
 
 
-    public void leerNotas(int totalAlumnos){
+    public void leerNotas(int numAlumno){
         Scanner sc= new Scanner(System.in);
         //si el array tiene notas, preguntar
         if (listaNotas!= null){
@@ -38,8 +38,8 @@ public class Evaluacion {
             String resp= sc.nextLine();
 
             if (resp.equalsIgnoreCase("s")){
-                listaNotas= new double[totalAlumnos];
-                for (int i=0; i<totalAlumnos; i++){
+                listaNotas= new double[numAlumno];
+                for (int i=0; i<numAlumno; i++){
                     do{
                         System.out.println("Introduce la nota:");
                         listaNotas[i]= sc.nextDouble();
@@ -50,9 +50,9 @@ public class Evaluacion {
         //si el array esta vacio
         }else{
             //crear array e introducir notas
-            listaNotas= new double[totalAlumnos];
+            listaNotas= new double[numAlumno];
 
-            for (int i=0; i<totalAlumnos; i++){
+            for (int i=0; i<numAlumno; i++){
                 do{
                     System.out.println("Introduce la nota:");
                     listaNotas[i]= sc.nextDouble();
@@ -197,5 +197,11 @@ public class Evaluacion {
     }
 
 
-
+    public double notaAlumno(int numAlumno){
+        if(listaNotas!=null && numAlumno>=0 && numAlumno< listaNotas.length){
+            return listaNotas[numAlumno];
+        } else {
+            return -1;
+        }
+    }
 }
