@@ -82,5 +82,24 @@ public class Evaluacion {
     }
 
     //metodo toString
+    public String toString(){
+        String frase= nombreAsignatura + ":\n";
+
+        if (listaNotas != null) {
+            //si hay notas
+
+            //recorremos el array de notas y agregamos cada nota con su respectivo número de alumno
+            for (int i = 0; i < listaNotas.length; i++) {
+                frase+= "Alumno " + (i + 1) + ": " + listaNotas[i];
+            }
+        } else {
+            //si no hay notas
+            frase+= "Sin notas por el momento";
+        }
+
+        // Devolvemos el resultado final
+        return frase;
+    }
+
 
 }
