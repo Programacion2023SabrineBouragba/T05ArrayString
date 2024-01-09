@@ -1,207 +1,86 @@
 import java.util.Scanner;
 
 public class Evaluacion {
-    //propiedades
-    private String nombreAsignatura;
-    private double[] listaNotas; //[] porque es un Array
+    Scanner sn= new Scanner(System.in);
 
-    //constructores
+    private String nombreAsignatura;
+    private double[] listaNotas;
+
+
+    //constructor un parametro
     public Evaluacion(String nombreAsignatura){
         this.nombreAsignatura= nombreAsignatura;
     }
+
+    //constructor dos parametro
     public Evaluacion(String nombreAsignatura, double[] listaNotas){
         this.nombreAsignatura= nombreAsignatura;
-        this.listaNotas=listaNotas;
+        this.listaNotas= listaNotas;
     }
 
-    //getters y setters
-    public String getNombreAsignatura(){
-        return nombreAsignatura;
-    }
-    public void setNombreAsignatura(String nombreAsignatura){
-        this.nombreAsignatura=nombreAsignatura;
-    }
+    //metodo para leer notas
+    public void leerNotas(int totalAlumnos){
 
-    public double[] getListaNotas(){
-        return listaNotas;
-    }
-    public void setListaNotas(double[] listaNotas){
-        this.listaNotas=listaNotas;
-    }
+        //comprobar si hemos creado el array
+        //si esta creado
+        if (listaNotas!=null){
 
+            System.out.println("Notas ya introducidas, desea introducirlas de nuevo (s/n)?");
+            String respuesta= sn.next();
 
-    public void leerNotas(int numAlumno){
-        Scanner sc= new Scanner(System.in);
-        //si el array tiene notas, preguntar
-        if (listaNotas!= null){
-            System.out.println("Notas ya introducidas, ¿desea introducirlas de nuevo?(s/n)");
-            String resp= sc.nextLine();
+            if (respuesta.equalsIgnoreCase("s")){
+                //volver a introducir las notas
+                listaNotas= new double[totalAlumnos];
 
-            if (resp.equalsIgnoreCase("s")){
-                listaNotas= new double[numAlumno];
-                for (int i=0; i<numAlumno; i++){
-                    do{
-                        System.out.println("Introduce la nota:");
-                        listaNotas[i]= sc.nextDouble();
-                    }while(listaNotas[i]<0 || listaNotas[i]>10);
+                //los arrays siempre empiezan por la posicion 0
+                for (int i = 0; i < totalAlumnos; i++) {
+                    //ir leyendo las notas y comprobando que se han introducido bien
+                    System.out.print("Introduce la nota del alumno " + (i + 1) + ": ");
+                    double nota = sn.nextDouble();
+
+                    if (i<0 || i>10){
+                        System.out.println("Error: La nota debe estar en el rango de 0 a 10.");
+                        /*hago que la i disminuya si se cumple la condicon, por ejemplo si en el
+                         * alumno 0 se introcuce un 11, en vez de que el for vaya a por el alumno
+                         * 1, baje y vuelva a introducir la nota del alumno 0*/
+                        i--;
+                    }else {
+                        listaNotas[i]= nota;
+                    }
+
                 }
             }
-
-        //si el array esta vacio
+            //si no esta creado
         }else{
-            //crear array e introducir notas
-            listaNotas= new double[numAlumno];
+            //si el array no esta creado
+            listaNotas= new double[totalAlumnos];
 
-            for (int i=0; i<numAlumno; i++){
-                do{
-                    System.out.println("Introduce la nota:");
-                    listaNotas[i]= sc.nextDouble();
-                }while(listaNotas[i]<0 || listaNotas[i]>10);
-            }
-        }
-    }
+            for (int i = 0; i < totalAlumnos; i++) {
+                //ir leyendo las notas y comprobando que se han introducido bien
+                System.out.print("Introduce la nota del alumno " + (i + 1) + ": ");
+                double nota = sn.nextDouble();
 
-
-
-
-    //sobrecarga
-    public String toString(){
-        String resultado= "Nombre asignatura: " + nombreAsignatura + "\n";
-
-        if(listaNotas!= null){
-            //.length para saber la lomgitud del array
-            for (int i=0; i<listaNotas.length; i++){
-                resultado+= "Alumno" + (i+1)+ ": " + listaNotas[i] + "\n";
-            }
-        }else{
-            resultado+= "Sin notas de momento";
-        }
-
-        return resultado;
-    }
-
-
-
-
-    public double media(){
-        if(listaNotas!= null){
-            double suma=0;
-            for(int i=0; i<listaNotas.length; i++){
-                suma+= listaNotas[i];
-            }
-            return suma/ listaNotas.length;
-        }else{
-            return -1;
-        }
-    }
-
-    public double minimo() {
-        if (listaNotas != null) {
-            double min = listaNotas[0];
-            for (int i = 1; i < listaNotas.length; i++) {
-                if (listaNotas[i] < min) {
-                    min = listaNotas[i];
+                if (i<0 || i>10){
+                    System.out.println("Error: La nota debe estar en el rango de 0 a 10.");
+                    /*hago que la i disminuya si se cumple la condicon, por ejemplo si en el
+                     * alumno 0 se introcuce un 11, en vez de que el for vaya a por el alumno
+                     * 1, baje y vuelva a introducir la nota del alumno 0*/
+                    i--;
+                }else {
+                    listaNotas[i]= nota;
                 }
+
+
             }
-            return min;
-        } else {
-            return -1;
+        }
+
+        //mostrar las notas
+        System.out.println("Notas introducidas: ");
+        for (int i=0; i< listaNotas.length; i++){
+            System.out.print("Alumno " + (i+1)+ ": " + listaNotas[i]);
         }
     }
 
+    //metodo toString
 
-    public double maximo() {
-        if (listaNotas != null) {
-            double max = listaNotas[0];
-            for (int i = 1; i < listaNotas.length; i++) {
-                if (listaNotas[i] > max) {
-                    max = listaNotas[i];
-                }
-            }
-            return max;
-        } else {
-            return -1;
-        }
-    }
-
-
-    public int totalSuspensos(){
-        if(listaNotas!=null){
-            int suspensos=0;
-            for (int i=0; i< listaNotas.length; i++){
-                if(listaNotas[i]<5){
-                    suspensos++;
-                }
-            }
-            return suspensos;
-        }else{
-            return -1;
-        }
-    }
-
-    public int totalAprobados(){
-        if(listaNotas!=null){
-            int aprobados=0;
-            for (int i=0; i< listaNotas.length; i++){
-                if(listaNotas[i]>=5){
-                    aprobados++;
-                }
-            }
-            return aprobados;
-        }else{
-            return -1;
-        }
-    }
-
-
-
-    public void  camiarNota(double nota, int numAlumno){
-        if(listaNotas!=null){
-            System.out.println("El array de notas es nulo");
-
-        } else if (numAlumno<0 || nota>= listaNotas.length) {
-            System.out.println("El número de alumno inválido.");
-        }else{
-            listaNotas[numAlumno]=nota;
-            System.out.println("Nota cambiada");
-        }
-    }
-
-
-    public int mejorAlumno(){
-        if (listaNotas!=null && listaNotas.length>0){
-            int mejor=0;
-            for(int i=1; i<listaNotas.length; i++){
-                if(listaNotas[i]>listaNotas[mejor]){
-                    mejor=i;
-                }
-            }
-            return mejor;
-        }else{
-            return -1;
-        }
-    }
-
-    public int peorAlumno(){
-        if (listaNotas!=null && listaNotas.length>0){
-            int peor=0;
-            for(int i=1; i<listaNotas.length; i++){
-                if(listaNotas[i]>listaNotas[peor]){
-                    peor=i;
-                }
-            }
-            return peor;
-        }else{
-            return -1;
-        }
-    }
-
-
-    public double notaAlumno(int numAlumno){
-        if(listaNotas!=null && numAlumno>=0 && numAlumno< listaNotas.length){
-            return listaNotas[numAlumno];
-        } else {
-            return -1;
-        }
-    }
 }
