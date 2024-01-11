@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Evaluacion {
+public class Asignatura {
     Scanner sn= new Scanner(System.in);
 
     private final String nombreAsignatura;
@@ -8,12 +8,12 @@ public class Evaluacion {
 
 
     //constructor un parametro
-    public Evaluacion(String nombreAsignatura){
+    public Asignatura(String nombreAsignatura){
         this.nombreAsignatura= nombreAsignatura;
     }
 
     //constructor dos parametro
-    public Evaluacion(String nombreAsignatura, double[] listaNotas){
+    public Asignatura(String nombreAsignatura, double[] listaNotas){
         this.nombreAsignatura= nombreAsignatura;
         this.listaNotas= listaNotas;
     }
@@ -85,6 +85,7 @@ public class Evaluacion {
     }
 
     //metodo toString
+    @Override
     public String toString(){
         String frase= nombreAsignatura + ":\n";
 
@@ -111,8 +112,8 @@ public class Evaluacion {
         //comprobar que el array no este vacio
         if (listaNotas != null) {
             //si hay notas, empezamos a recorrer el array y sumando las notas que vayan apareciendo
-            for (int i=0; i< listaNotas.length; i++){
-                suma+= listaNotas[i];
+            for (double listaNota : listaNotas) {
+                suma += listaNota;
             }
             //devuelve la suma de las notas entre la longitud del array
             return suma / listaNotas.length;
@@ -132,11 +133,11 @@ public class Evaluacion {
             /*igualamos la variable a la primera nota del array, y a partir de esta
             * vamos viendo si las celdas que vienen su contenido es menor que la primera celda */
             double notaMenor= listaNotas[0];
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es menor que la celda 0, cambiar a celda actual
-                * si no es menor, sigue con el bucle*/
-                if(listaNotas[i]<notaMenor){
-                    notaMenor=listaNotas[i];
+                 * si no es menor, sigue con el bucle*/
+                if (listaNota < notaMenor) {
+                    notaMenor = listaNota;
                 }
             }
             //devuelve la nota mas baja de entre la longitud del array
@@ -157,11 +158,11 @@ public class Evaluacion {
             /*igualamos la variable a la primera nota del array, y a partir de esta
              * vamos viendo si las celdas que vienen su contenido es mayor que el anterior*/
             double notaMayor= listaNotas[0];
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es mayor que la celda 0, cambiar a celda actual
                  * si no es mayor, sigue con el bucle hasta que acabe la longitud del array*/
-                if(listaNotas[i]>notaMayor){
-                    notaMayor=listaNotas[i];
+                if (listaNota > notaMayor) {
+                    notaMayor = listaNota;
                 }
             }
             //devuelve la nota maxima de entre la longitud del array
@@ -181,9 +182,9 @@ public class Evaluacion {
 
             int suspensos= 0;
             //el for recorre el array desde 0 hasta su ultima celda
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es menor que 5, aumentar contador de susoensos*/
-                if(listaNotas[i]<5){
+                if (listaNota < 5) {
                     suspensos++;
                 }
             }
@@ -205,9 +206,9 @@ public class Evaluacion {
 
             //el for recorre el array
             int aprobadas= 0;
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es mayor igual que 5, aumentar contador de aprobados*/
-                if(listaNotas[i]>=5){
+                if (listaNota >= 5) {
                     aprobadas++;
                 }
             }
@@ -254,11 +255,11 @@ public class Evaluacion {
             /*igualamos la variable a la primera nota del array, y a partir de esta
              * vamos viendo si las celdas que vienen su contenido es menor que el anterior*/
             double notaMaxima= listaNotas[0];
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es mayor que la celda 0, cambiar a celda actual
                  * si no es menor, sigue con el bucle*/
-                if(listaNotas[i]>notaMaxima){
-                    notaMaxima=listaNotas[i];
+                if (listaNota > notaMaxima) {
+                    notaMaxima = listaNota;
                 }
             }
             //devuelve la nota maxima de entre la longitud del array
@@ -279,11 +280,11 @@ public class Evaluacion {
             /*igualamos la variable a la primera nota del array, y a partir de esta
              * vamos viendo si las celdas que vienen su contenido es menor que el anterior*/
             double notaMinima= listaNotas[0];
-            for (int i=0; i< listaNotas.length; i++){
+            for (double listaNota : listaNotas) {
                 /*si el contenido de la celda actual es menor que la celda 0, cambiar a celda actual
                  * si no es menor, sigue con el bucle*/
-                if(listaNotas[i]<notaMinima){
-                    notaMinima=listaNotas[i];
+                if (listaNota < notaMinima) {
+                    notaMinima = listaNota;
                 }
             }
             //devuelve la nota maxima de entre la longitud del array
