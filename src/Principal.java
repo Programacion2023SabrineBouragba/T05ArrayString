@@ -85,11 +85,12 @@ public class Principal {
 
                 case 12:
                     //obtener el array de índices de aprobados
-
+                    dameAprobados();
                     break;
 
                 case 13:
                     //obtener el array de índices de suspensos
+                    dameSuspensos();
                     break;
 
                 default:
@@ -139,5 +140,31 @@ public class Principal {
         return opcion;
     }
 
+    public static void dameAprobados(){
+        //creo el objeto de asignatura para que me llame a la clase asignatura
+        Asignatura asignatura= new Asignatura("");
+
+        //creo el array en base a dameAprobados de la clase asignatura
+        int[] aprobados= asignatura.dameAprobados();
+
+        //for para recorrer el array aprobaados, y me vaya mostrando los aprobados
+        for (int i: aprobados){
+            System.out.println(i + ", ");
+        }
+    }
+
+    public static void dameSuspensos(){
+        //creo el objeto de asignatura para que me llame a la clase asignatura
+
+        Asignatura asignatura= new Asignatura("");
+
+        //creo el array en base a dameAprobados de la clase asignatura
+        int[] suspensos= asignatura.dameSuspensos();
+
+        //for para recorrer el array aprobaados, y me vaya mostrando los aprobados
+        for (int i: suspensos){
+            System.out.println(i + ", ");
+        }
+    }
 
 }
