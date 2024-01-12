@@ -2,66 +2,85 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
         int opcion;
+
+        Asignatura asignatura = new Asignatura("Programación");
 
         do{
             /*llamo a la función menu, me muestra el menu
               y con el switch me muestra cada opcion con su funcion*/
             opcion= mostrarMenu();
+            //creamos objeto
+
             switch (opcion) {
                 case 1:
                     //introducir las notas
+                    System.out.print("Introduce el total de alumnos: ");
+                    int totalAlumnos= sc.nextInt();
 
+                    //llamamos al metodo
+                    asignatura.leerNotas(totalAlumnos);
                     break;
 
                 case 2:
                     //mostrar notas
+                    System.out.println(asignatura.toString());
 
                     break;
 
                 case 3:
                     //mostrar la media de las notas introducidas
-
+                    System.out.println("Media de las notas " + asignatura.media());
                     break;
 
                 case 4:
                     //mostrar la nota mas baja
-
+                    System.out.println("Nota más baja: " + asignatura.minimo());
                     break;
 
                 case 5:
                     //mostrar la nota mas alta
-
+                    System.out.println("Nota más alta: " + asignatura.minimo());
                     break;
 
                 case 6:
                     //mostrar el total de suspensos
-
+                    System.out.println("Total suspensos: " + asignatura.totalSuspensos());
                     break;
 
                 case 7:
                     //mostrar el total de aprobados
-
+                    System.out.println("Total aprobados: " + asignatura.totalAprobados());
                     break;
 
                 case 8:
                     //cambiar nota
+                    System.out.print("Introduce el número del alumno: ");
+                    //leemos numero de alumno y la nota actualizada
+                    int numAlumno= sc.nextInt();
+                    double nuevaNota = sc.nextDouble();
 
+                    //llamamos al metodo
+                    asignatura.cambiarNota(nuevaNota, numAlumno);
                     break;
 
                 case 9:
                     //mostrar la nota del alumno con mas nota
-
+                    System.out.println("Mejor nota: " + asignatura.mejorAlumno());
                     break;
 
                 case 10:
                     //mostrar la nota del alumno con menos nota
-
+                    System.out.println("Peor nota: " + asignatura.peorAlumno());
                     break;
 
                 case 11:
                     //ver la nota de un alumno específico
-
+                    System.out.print("Introduce el número del alumno: ");
+                    int numAlu= sc.nextInt();
+                    //el usuario empieza a contar desde 1, mientras que el array empieza a contar desde 0, por eso el -1
+                    System.out.println(asignatura.notaAlumno(numAlu-1));
                     break;
 
                 case 12:
@@ -118,15 +137,6 @@ public class Principal {
         }while (opcion>13);
 
         return opcion;
-    }
-
-    public static void nombreAsignatura(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce nombre asignatura");
-        String nombre= sc.next();
-
-        Asignatura asignatura= new Asignatura(nombre);
-
     }
 
 
