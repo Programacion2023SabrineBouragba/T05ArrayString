@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Asignatura {
     Scanner sn= new Scanner(System.in);
 
+    //declarada como constante
     private final String nombreAsignatura;
     private double[] listaNotas;
 
