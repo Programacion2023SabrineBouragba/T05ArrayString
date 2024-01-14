@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class Asignatura {
     Scanner sn= new Scanner(System.in);
 
+
+
     //declarada como constante
-    private final String nombreAsignatura;
+    public final String nombreAsignatura;
     private double[] listaNotas;
+
 
 
     //constructor un parametro
@@ -19,6 +22,11 @@ public class Asignatura {
         this.listaNotas= listaNotas;
     }
 
+
+    //obtener el nombre de la asignatura
+    public String getNombreAsignatura() {
+        return nombreAsignatura;
+    }
     //metodo para leer notas
     public void leerNotas(int totalAlumnos){
 

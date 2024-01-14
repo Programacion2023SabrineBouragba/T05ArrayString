@@ -41,7 +41,7 @@ public class Principal {
 
                 case 5:
                     //mostrar la nota mas alta
-                    System.out.println("Nota más alta: " + asignatura.minimo());
+                    System.out.println("Nota más alta: " + asignatura.maximo());
                     break;
 
                 case 6:
