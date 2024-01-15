@@ -118,7 +118,7 @@ public class Principal2 {
             System.out.println("9. Muestra media de los alumnos");
             System.out.println("10. Muestra repetidores");
             System.out.println("11. Analiza Asignaturas");
-            System.out.println("12. - Analiza curso");
+            System.out.println("12. Analiza curso");
             System.out.println("13. Salir");
 
 

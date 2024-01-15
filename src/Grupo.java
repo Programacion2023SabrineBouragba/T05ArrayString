@@ -31,9 +31,9 @@ public class Grupo {
         Scanner sc= new Scanner(System.in);
 
         //empezando en 1, con maximo el parametro totalalumnos
-        for(int i=1; i<=totalAlumnos; i++){
+        for(int i=0; i<totalAlumnos; i++){
             //ir introduciendo nombre, y que lo vaya almacenando en un array de string
-            System.out.print("Introduce el nombre del alumno " +i+": ");
+            System.out.print("Introduce el nombre del alumno " +(i+1)+": ");
             alumnos[i]= sc.next();
         }
 
@@ -42,16 +42,15 @@ public class Grupo {
     }
 
     //metodo para mostrar los nombres de los alumnos
-    public String mostrarAlumnos() {
+    public void mostrarAlumnos() {
         String nombre = "";
         //recorremos el array, de principio a fin
         for (String i : alumnos) {
             //vamos imprimiendo los nombres
-            System.out.println(i + ", ");
+            System.out.print(i + ", ");
+            System.out.println();
             //se almacenan en esta variable, para q el metodo me la pueda devolver
-            nombre = i;
         }
-        return nombre;
     }
 
     //metodo para introducir las asignarutas
