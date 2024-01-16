@@ -55,7 +55,7 @@ public class Tarea3String {
         String[] vocales= {"a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú","A", "E", "I", "O", "U", "Á", "É", "Í", "Ó", "Ú"};
 
         //igualo la nueva variable a la frase, donde guardare la frase sin vocales
-        String sinVocales=frase;
+
 
         //recorro el array de vocales
         for (int i=0; i< vocales.length; i++){
@@ -63,10 +63,10 @@ public class Tarea3String {
             coincide alguna vocal, las voy eliminando de la frase, ejemplo:
             la palabra ANA, va recorriendo el array, hasta que encuente i=10 que corresponde con a mayuscula
             y las quita de la frase, asi en cualquier ejemplo*/
-            sinVocales= sinVocales.replaceAll(vocales[i], "");
+            frase= frase.replaceAll(vocales[i], "");
         }
 
-        return sinVocales;
+        return frase;
     }
 
 
@@ -88,6 +88,7 @@ public class Tarea3String {
         String reves="";
 
         //recorremos frase de final a inicio
+        //como se empieza desde 0 a la longitud, para invertir seria la longitud de la frase-1, hasta 0
         for (int i= frase.length()-1; i>=0; i--){
             /*mientras recorro la longitud de la palabra, en la variable reves se va
             almacenando el valor del caracter i, empezando de fin de la cadena, a inicio*/
