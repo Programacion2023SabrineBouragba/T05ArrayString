@@ -9,6 +9,6 @@ public class Principal3 {
 //            System.out.println("DNI incorrecto, vurlve a intentarlo");
 //        }
 
-        System.out.println(comprobar.quitaVocales("Bouragba Anhari"));;
+        System.out.println(comprobar.quitaEspaciosSobrantes("En un lugar de la Mancha"));;
     }
 }

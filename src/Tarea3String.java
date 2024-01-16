@@ -63,11 +63,19 @@ public class Tarea3String {
             /*voy recorriendo el array vocales(i), y si en la frase dada,
             coincide alguna vocal, las voy eliminando de la frase, ejemplo:
             la palabra ANA, va recorriendo el array, hasta que encuente i=10 que corresponde con a mayuscula
-            y las quita de la frase*/
+            y las quita de la frase, asi en cualquier ejemplo*/
             sinVocales= sinVocales.replaceAll(vocales[i], "");
         }
 
         return sinVocales;
+    }
+
+
+    /*metodo para quitar espacios de una frase*/
+    public String quitaEspaciosSobrantes(String frase){
+        String sinEspacios= frase.replaceAll(" ", "*");
+
+        return sinEspacios;
     }
 
 }
