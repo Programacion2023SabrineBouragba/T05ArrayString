@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Tarea3String {
 
     /*metodo para comprobar que el nif introducido sea correcto.
-    * información obtenida de:
+    * parde de información obtenida de:
     * https://es.stackoverflow.com/questions/325876/comprobar-si-un-car%C3%A1cter-de-un-string-es-un-n%C3%BAmero*/
     public boolean esCorrectoNIF(String NIF){
 
@@ -46,5 +48,26 @@ public class Tarea3String {
         }
     }
 
+
+    /*metodo para quitar vocales*/
+    public String quitaVocales(String frase){
+
+        //en un array las vocales
+        String[] vocales= {"a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú","A", "E", "I", "O", "U", "Á", "É", "Í", "Ó", "Ú"};
+
+        //igualo la nueva variable a la frase, donde guardare la frase sin vocales
+        String sinVocales=frase;
+
+        //recorro el array de vocales
+        for (int i=0; i< vocales.length; i++){
+            /*voy recorriendo el array vocales(i), y si en la frase dada,
+            coincide alguna vocal, las voy eliminando de la frase, ejemplo:
+            la palabra ANA, va recorriendo el array, hasta que encuente i=10 que corresponde con a mayuscula
+            y las quita de la frase*/
+            sinVocales= sinVocales.replaceAll(vocales[i], "");
+        }
+
+        return sinVocales;
+    }
 
 }
