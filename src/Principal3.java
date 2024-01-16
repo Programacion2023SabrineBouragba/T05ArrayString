@@ -53,7 +53,15 @@ public class Principal3 {
                     break;
 
                 case 5:
-                    System.out.println("Saliendo...");
+                    System.out.print("Introduce la oración: ");
+                    String oracionContador= sc.nextLine();
+
+                    System.out.print("Introduce la palabra a comprobar: ");
+                    String palabra= sc.nextLine();
+
+                    int contador=comprobar.repeticiones(oracionContador, palabra);
+                    System.out.println("La palabra " + palabra + " sale " + contador + " veces.");
+
                     break;
             }
 
@@ -72,11 +80,11 @@ public class Principal3 {
             System.out.println("2- Quitar vocales de una palabra/frase.");
             System.out.println("3- Quitar espacios de una frase.");
             System.out.println("4- Invertir el orden de una palabra/frase");
-            System.out.println("5- Salir");
+            System.out.println("5- Introduce una oracion y la palabra a contar");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
-        }while (opcion<0 || opcion>5);
+        }while (opcion<0 || opcion>6);
 
         return opcion;
     }

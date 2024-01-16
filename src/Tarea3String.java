@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Tarea3String {
 
@@ -96,6 +95,30 @@ public class Tarea3String {
         }
 
         return reves;
+    }
+
+    /*metodo para calcular cuantas veces sale una palabra en una oracion
+    *ejemplo y explicacion de split sacada de:
+    * https://www.delftstack.com/es/howto/java/java-word-count/ */
+    public int repeticiones(String frase, String palabra){
+        /*dividir la frase introducipa en palabras, y almacenarlas en un array
+        * "\\s+" significa que me divida el string a medida que hayan espacios*/
+        String[] palabras= frase.split("\\s+");
+
+        int contador=0;
+        //recorro el array de palabras
+        for (int i=0; i<palabras.length; i++){
+            /*convierto el contenido de la posicion i del array en un string,
+            para comprobar si es igual a la palabra introducida por el usuario*/
+            String palabraString= new String(palabras[i]);
+            //si el contenido de i, es igual a la palabra introducida por el usuario, que vaya aumentando el contador
+            if (palabraString.matches(palabra)){
+                contador++;
+            }
+        }
+
+        //me devuelva la cantidad de vecs q se repite la palabra en la oracion
+        return contador;
     }
 
 }
