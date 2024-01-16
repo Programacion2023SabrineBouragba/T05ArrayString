@@ -73,9 +73,29 @@ public class Tarea3String {
 
     /*metodo para quitar espacios de una frase*/
     public String quitaEspaciosSobrantes(String frase){
+        //String que reemplaza los espacios en blanco
         String sinEspacios= frase.replaceAll(" ", "*");
 
         return sinEspacios;
+    }
+
+
+    /*metodo para invertir con ciclos el orden de la frase introducida
+    * ejemplo obtenido de:
+    * https://parzibyte.me/blog/2019/02/20/invertir-cadena-string-java/ */
+
+    public String invertir(String frase){
+        //variable donde guardare la frase invertida
+        String reves="";
+
+        //recorremos frase de final a inicio
+        for (int i= frase.length()-1; i>=0; i--){
+            /*mientras recorro la longitud de la palabra, en la variable reves se va
+            almacenando el valor del caracter i, empezando de fin de la cadena, a inicio*/
+            reves+= frase.charAt(i);
+        }
+
+        return reves;
     }
 
 }
