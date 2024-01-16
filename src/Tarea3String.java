@@ -7,7 +7,7 @@ public class Tarea3String {
     public boolean esCorrectoNIF(String NIF){
 
         //commprobamos q no este nulo o que exceda 9 caracteres
-        if (NIF== null || NIF.length()!=9){
+        if (NIF.length()!=9){
             return false;
         }else {
             String numDni = "";
@@ -117,8 +117,17 @@ public class Tarea3String {
             }
         }
 
-        //me devuelva la cantidad de vecs q se repite la palabra en la oracion
+        //me devuelva la cantidad de vecs q se repite la palabra en la oracion++
         return contador;
+    }
+
+    public boolean palindromo(String frase){
+        String invertido= invertir(frase.toLowerCase());
+        if (frase.matches(invertido)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

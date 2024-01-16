@@ -63,6 +63,20 @@ public class Principal3 {
                     System.out.println("La palabra " + palabra + " sale " + contador + " veces.");
 
                     break;
+
+                case 6:
+                    //reconocer, amad a la dama, salas
+                    System.out.print("Introduce oracion para ver si es palindrome: ");
+                    String frasePalindromo= sc.nextLine();
+
+                    if (comprobar.palindromo(frasePalindromo)){
+                        System.out.println("La oracion introducida es palindromo");
+                    }else{
+                        System.out.println("La oracion introducida no es palindromo");
+                    }
+                    System.out.println();
+
+                    break;
             }
 
         }while (opcion<=5);
@@ -81,6 +95,7 @@ public class Principal3 {
             System.out.println("3- Quitar espacios de una frase.");
             System.out.println("4- Invertir el orden de una palabra/frase");
             System.out.println("5- Introduce una oracion y la palabra a contar");
+            System.out.println("6- Comprobar si la oracion es palindromo");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
