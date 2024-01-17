@@ -46,7 +46,7 @@ public class Tarea3String {
 
         }
     }
-
+2
 
     /*metodo para quitar vocales*/
     public String quitaVocales(String frase){
@@ -73,9 +73,9 @@ public class Tarea3String {
     /*metodo para quitar espacios de una frase*/
     public String quitaEspaciosSobrantes(String frase){
         //String que reemplaza los espacios en blanco
-        String sinEspacios= frase.replaceAll(" ", "*");
+        frase= frase.replaceAll(" ", "*");
 
-        return sinEspacios;
+        return frase;
     }
 
 
@@ -111,7 +111,7 @@ public class Tarea3String {
         for (int i=0; i<palabras.length; i++){
             /*convierto el contenido de la posicion i del array en un string,
             para comprobar si es igual a la palabra introducida por el usuario*/
-            String palabraString= new String(palabras[i]);
+            String palabraString= palabras[i];
             //si el contenido de i, es igual a la palabra introducida por el usuario, que vaya aumentando el contador
             if (palabraString.matches(palabra)){
                 contador++;
