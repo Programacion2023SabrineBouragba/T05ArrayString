@@ -77,9 +77,23 @@ public class Principal3 {
                     System.out.println();
 
                     break;
+
+                case 7:
+                    System.out.print("Introduce la palabra a cifrar: ");
+                    String mensaje= sc.nextLine();
+
+                    System.out.println("El mensaje cifrado es: " + comprobar.cifrar(mensaje));
+
+                    break;
+
+                case 8:
+                    System.out.print("Introduce la palabra a descifrar: ");
+                    String mensajeCifrado= sc.nextLine();
+
+                    System.out.println("El mensaje descifrado es: " + comprobar.descifrar(mensajeCifrado));
             }
 
-        }while (opcion<=5);
+        }while (opcion<=10);
 
     }
 
@@ -96,10 +110,12 @@ public class Principal3 {
             System.out.println("4- Invertir el orden de una palabra/frase");
             System.out.println("5- Introduce una oracion y la palabra a contar");
             System.out.println("6- Comprobar si la oracion es palindromo");
+            System.out.println("7- Cifrar mensaje");
+            System.out.println("8- Descifrar mensaje");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
-        }while (opcion<0 || opcion>6);
+        }while (opcion<0 || opcion>10);
 
         return opcion;
     }

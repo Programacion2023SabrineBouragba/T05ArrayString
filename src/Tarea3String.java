@@ -1,9 +1,9 @@
 
 public class Tarea3String {
 
-    /*metodo para comprobar que el nif introducido sea correcto.
-    * parde de información obtenida de:
-    * https://es.stackoverflow.com/questions/325876/comprobar-si-un-car%C3%A1cter-de-un-string-es-un-n%C3%BAmero*/
+    /**metodo para comprobar que el nif introducido sea correcto.
+     * parde de información obtenida de:
+     * <a href="https://es.stackoverflow.com/questions/325876/comprobar-si-un-car%C3%A1cter-de-un-string-es-un-n%C3%BAmero">...</a>*/
     public boolean esCorrectoNIF(String NIF){
 
         //commprobamos q no este nulo o que exceda 9 caracteres
@@ -46,9 +46,9 @@ public class Tarea3String {
 
         }
     }
-2
 
-    /*metodo para quitar vocales*/
+
+    /**metodo para quitar vocales*/
     public String quitaVocales(String frase){
 
         //en un array las vocales
@@ -70,7 +70,7 @@ public class Tarea3String {
     }
 
 
-    /*metodo para quitar espacios de una frase*/
+    /**metodo para quitar espacios de una frase*/
     public String quitaEspaciosSobrantes(String frase){
         //String que reemplaza los espacios en blanco
         frase= frase.replaceAll(" ", "*");
@@ -79,9 +79,9 @@ public class Tarea3String {
     }
 
 
-    /*metodo para invertir con ciclos el orden de la frase introducida
-    * ejemplo obtenido de:
-    * https://parzibyte.me/blog/2019/02/20/invertir-cadena-string-java/ */
+    /**metodo para invertir con ciclos el orden de la frase introducida
+     * ejemplo obtenido de:
+     * <a href="https://parzibyte.me/blog/2019/02/20/invertir-cadena-string-java/">...</a> */
 
     public String invertir(String frase){
         //variable donde guardare la frase invertida
@@ -98,9 +98,9 @@ public class Tarea3String {
         return reves;
     }
 
-    /*metodo para calcular cuantas veces sale una palabra en una oracion
-    *ejemplo y explicacion de split sacada de:
-    * https://www.delftstack.com/es/howto/java/java-word-count/ */
+    /**metodo para calcular cuantas veces sale una palabra en una oracion
+     *ejemplo y explicacion de split sacada de:
+     * <a href="https://www.delftstack.com/es/howto/java/java-word-count/">...</a> */
     public int repeticiones(String frase, String palabra){
         /*dividir la frase introducipa en palabras, y almacenarlas en un array
         * "\\s+" significa que me divida el string a medida que hayan espacios*/
@@ -122,13 +122,117 @@ public class Tarea3String {
         return contador;
     }
 
+    /** metodo que verifica si una palabra/frase se escribe igual tanto del derecho como del reves
+     * */
     public boolean palindromo(String frase){
+        /*en la variable invertido, llamo al metodo invertir, para invertir el orden de la frase/palabra introducida,
+        *pasandola a minuscula, y la guardo en dicha variable*/
         String invertido= invertir(frase.toLowerCase());
         if (frase.matches(invertido)){
             return true;
         }else{
             return false;
         }
+    }
+
+
+    /**metodo para cifrar mensajes, donde cada letra del alfabeto se rota 3 veces en este caso
+     * ejemplo, la a se convierte en d, entonces en una palabra que contenga a, se convertiran en d,
+     * asi con todo el alfabeto.
+     * Ejemplo obtenido de:
+     * <a href="https://parzibyte.me/blog/2019/05/23/cifrado-cesar-java-algoritmo/">...</a>*/
+    public String cifrar(String mensaje){
+        //pasamos el mensaje a minusculas
+        mensaje= mensaje.toLowerCase();
+
+        //string donde allmaceno las letras del alfabeto en minuscula, tengo en cuenta la consonante 'ñ'
+        String alfabeto= "abcdefghijklmnñopqrstuvwxyz";
+
+
+        //donde se almacenara la cadena cifrada
+        String cadenaCifrada="";
+
+        //recorremos la longitud del mensaje introducido por el usuario
+        for (int i=0; i<mensaje.length(); i++){
+            //convertir la letra del mensaje de la posicion actual(i) en un caracter y almacenarlo
+            char letraActual= mensaje.charAt(i);
+
+            //si no es una letra, almacenarla tal cual
+            if (!Character.isLetter(letraActual)){
+                cadenaCifrada+= letraActual;
+                continue;   //para indicarle que pase al siguiente ciclo(pasa al siguiente i)
+            }
+
+
+            //obtener la posicion actual de la letra en el alfabeto, ej. si es a me da la posicion 0 en el alfbeto
+            int posicionActual= alfabeto.indexOf(letraActual);
+
+            /*a la posicion actual, le sumo 3, para q se desplace 3 casillas,
+            * utilizo el modulo por si se pasa de la longitud de mi alfabeto por si se pasa de 27,
+            * ej. la z rotada 3 veces, me daria 30, pero mi alfabeto tiene 27 letras, me daria error,
+            * asi que lo que hago es 30%27 (longitud de mi algabeto) y me dara la posicion 3, es decir se sustituira
+            * por la letra c, asi con todo.*/
+            //calcular la nueva posicion despues del desplazamiento
+            int nuevaPosicion= (posicionActual + 3) % alfabeto.length();
+
+            //obtener la letra cifrada y agregarla a la cadena
+            char letraCifrada= alfabeto.charAt(nuevaPosicion);
+
+            cadenaCifrada+=letraCifrada;
+        }
+
+        return cadenaCifrada;
+    }
+
+
+    public String descifrar(String cifrado){
+
+        //string donde almaceno las letras del alfabeto en minuscula, tengo en cuenta la consonante 'ñ'
+        String alfabeto= "abcdefghijklmnñopqrstuvwxyz";
+
+
+        //donde se almacenara la cadena descifrada
+        String cadenaDescifrada="";
+
+        //recorremos la longitud del mensaje introducido por el usuario
+        for (int i=0; i<cifrado.length(); i++){
+            //convertir la letra del mensaje de la posicion actual(i) en un caracter y almacenarlo
+            char letraActual= cifrado.charAt(i);
+
+            //si no es una letra, almacenarla tal cual
+            if (!Character.isLetter(letraActual)){
+                cadenaDescifrada+= letraActual;
+                continue;   //para indicarle que pase al siguiente ciclo(pasa al siguiente i)
+            }
+
+
+            //obtener la posicion actual de la letra en el alfabeto, ej. si es a me da la posicion 0 en el alfbeto
+            int posicionActual= alfabeto.indexOf(letraActual);
+
+            /*a la posicion actual, le resto 3, para q se desplace 3 casillas hacia atras,
+             * utilizo el modulo por si se pasa de la longitud de mi alfabeto por si se pasa de 27,
+             * ej. la z rotada 3 veces, me daria 30, pero mi alfabeto tiene 27 letras, me daria error,
+             * asi que lo que hago es 30%27 (longitud de mi alfabeto) y me dara la posicion 3, es decir se sustituira
+             * por la letra c, asi con todo.*/
+            //calcular la nueva posicion despues del desplazamiento
+            int nuevaPosicion= (posicionActual - 3) % alfabeto.length();
+
+            /*si la nuevaposicion me da negativo, lo que hago es sumarle a la posicion la longitud del alfabeto
+            * eso lo q va a hacer es restarle a la longitud del alfabeto la posicion (sin el negativo), y me dara la posicion correspondiente
+            * ej. cl(mensaje cifrado), a c si le resto 3 posiciones, me dara -1, a este valor le sumo la longitud de mi alfabeto
+            * y me devolvera la posicion de la letra z(aunque la longitud de mi alfabeto es de 27, java empieza a contar desde 0, por lo que va de 0 a 26),
+            * la nueva posicion, y l si le resto 3, me da i, por lo q el mensaje descifrado seria 'zi'*/
+            if (nuevaPosicion < 0) {
+                nuevaPosicion += alfabeto.length();
+            }
+
+            //obtener la letra cifrada y agregarla a la cadena
+            char letraDescifrada= alfabeto.charAt(nuevaPosicion);
+
+            cadenaDescifrada+=letraDescifrada;
+        }
+
+        return cadenaDescifrada;
     }
 
 }
