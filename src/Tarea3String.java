@@ -185,6 +185,7 @@ public class Tarea3String {
     }
 
 
+    /**metodo para descifrar mensajes, similar al metodo anterior, pero en vez de sumar casillas, se van restando*/
     public String descifrar(String cifrado){
 
         //string donde almaceno las letras del alfabeto en minuscula, tengo en cuenta la consonante 'ñ'
@@ -234,5 +235,46 @@ public class Tarea3String {
 
         return cadenaDescifrada;
     }
+
+
+    public String cuentaCaracteres(String frase){
+        //string donde almaceno las letras del alfabeto en minuscula, tengo en cuenta la consonante 'ñ'
+        String alfabeto= "abcdefghijklmnñopqrstuvwxyz";
+
+        //string donde almacenare el resultado
+        String resultado="";
+        //recorro el alfabeto
+        for (int i=0; i<alfabeto.length(); i++){
+
+            //a esta variable le asigno el valor de alfabeto dependiendo de la posicion de i
+            String letraAbecedario= String.valueOf(alfabeto.charAt(i));
+
+            //string donde almacenare la letra actual de la frase
+            String letraActual;
+            int contador=0;
+            //recorro la longitud de la frase introducida por el usuario
+            for (int j= 0; j<frase.length(); j++){
+                //asigno a esta variable el valor de la letra de frase dependiendo en j
+                letraActual= String.valueOf(frase.charAt(j));
+                //si la letra actual(j) es igual sin considerar mayuscula o minuscula a la letra del abecedario(i), aumentar contador
+                if (letraActual.equalsIgnoreCase(letraAbecedario)){
+                    contador++;
+                }
+            }
+
+            //si el contador es igual o mayor que 1, imprimir lo siguiente
+            if (contador>=1){
+                //almaceno en esta variable el valor de contador, me pasa de int a string
+                String veces= String.valueOf(contador);
+
+                //el resultado sera la letra abecedario actual(i) + numero de veces repetida(contador) + salto de linea
+                resultado+= letraAbecedario + ": " + veces + " veces." + "\n";
+            }
+        }
+
+        //me devuelva la frase final
+        return resultado;
+    }
+
 
 }

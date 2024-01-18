@@ -91,6 +91,14 @@ public class Principal3 {
                     String mensajeCifrado= sc.nextLine();
 
                     System.out.println("El mensaje descifrado es: " + comprobar.descifrar(mensajeCifrado));
+
+                    break;
+
+                case 9:
+                    System.out.print("Introduce una frase: ");
+                    String contar= sc.nextLine();
+
+                    System.out.println(comprobar.cuentaCaracteres(contar));
             }
 
         }while (opcion<=10);
@@ -112,6 +120,7 @@ public class Principal3 {
             System.out.println("6- Comprobar si la oracion es palindromo");
             System.out.println("7- Cifrar mensaje");
             System.out.println("8- Descifrar mensaje");
+            System.out.println("9- Cuenta caracteres");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
