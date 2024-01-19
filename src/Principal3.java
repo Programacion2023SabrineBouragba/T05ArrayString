@@ -99,6 +99,14 @@ public class Principal3 {
                     String contar= sc.nextLine();
 
                     System.out.println(comprobar.cuentaCaracteres(contar));
+
+                    break;
+
+                case 10:
+                    JuegoAhorcado jugar= new JuegoAhorcado();
+                    System.out.print("Introduce la palabra a adivinar: ");
+                    String palabraSecreta= sc.nextLine();
+                    jugar.Partida(palabraSecreta);
             }
 
         }while (opcion<=10);
@@ -121,10 +129,11 @@ public class Principal3 {
             System.out.println("7- Cifrar mensaje");
             System.out.println("8- Descifrar mensaje");
             System.out.println("9- Cuenta caracteres");
+            System.out.println("10- Juego del ahorcado");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
-        }while (opcion<0 || opcion>10);
+        }while (opcion<0 || opcion>11);
 
         return opcion;
     }

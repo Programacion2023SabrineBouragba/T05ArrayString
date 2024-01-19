@@ -127,6 +127,7 @@ public class Tarea3String {
     public boolean palindromo(String frase){
         /*en la variable invertido, llamo al metodo invertir, para invertir el orden de la frase/palabra introducida,
         *pasandola a minuscula, y la guardo en dicha variable*/
+        frase= frase.replace(" ","");
         String invertido= invertir(frase.toLowerCase());
         if (frase.matches(invertido)){
             return true;
@@ -237,6 +238,7 @@ public class Tarea3String {
     }
 
 
+    /**metodo para que me cuente cuantas veces se repiten los caracteres dentro de una frase*/
     public String cuentaCaracteres(String frase){
         //string donde almaceno las letras del alfabeto en minuscula, tengo en cuenta la consonante 'ñ'
         String alfabeto= "abcdefghijklmnñopqrstuvwxyz";
