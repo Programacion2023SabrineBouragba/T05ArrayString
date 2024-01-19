@@ -7,15 +7,18 @@ public class JuegoAhorcado {
 
 
     public void Partida(String palabrasecreta){
-        palabrasecreta= palabrasecreta.toLowerCase();
+        palabrasecreta= palabrasecreta.toUpperCase();
 
         Scanner sc= new Scanner(System.in);
 
         //array char con la longitud de la palabra secreta, y con el bucle for, voy cogiendo las letras y almacenandolas
         char[] palabra= new char[palabrasecreta.length()];
+        char[] repuestopalabra= new char[palabrasecreta.length()];
         for (int i=0; i<palabrasecreta.length(); i++){
             palabra[i]= palabrasecreta.charAt(i);
+            repuestopalabra[i]= palabrasecreta.charAt(i);
         }
+
 
         char[] respuestas= new char[palabra.length];
 
@@ -24,12 +27,14 @@ public class JuegoAhorcado {
             respuestas[guiones]= '_';
         }
 
-        int aciertos=0;
+
         //mientras tenga vidas
         while (intentos> 0){
+            boolean aciertos=false;
+
             System.out.print("Introduce una letra: ");
             String letra= sc.next();
-            letra= letra.toLowerCase();
+            letra= letra.toUpperCase();
 
             //almaceno la letra intrducida, que estaria en la posicion 0
             char letraIntroducida= letra.charAt(0);
@@ -39,7 +44,7 @@ public class JuegoAhorcado {
                 if (palabra[i]== letraIntroducida){
                     respuestas[i]= palabra[i];
                     palabra[i]=' ';
-                    aciertos++;
+                    aciertos= true;
 
                 }
             }
@@ -47,18 +52,19 @@ public class JuegoAhorcado {
             System.out.println(respuestas);
 
             //si no ha acertado se le resta una vida, si los aciertos igualan la longitud de la palabra, romper
-            if (aciertos==0){
-                intentos--;
-            }else if(aciertos== respuestas.length){
+            if (!aciertos){
+                System.out.println("Letra incorrecta.");
+                --intentos;
+                System.out.println("Te quedan " + intentos + " intentos.");
+            }else if(respuestas== repuestopalabra){
+                System.out.println("¡Enhorabuena, las has acertado todas!");
                 break;
             }
-        }
 
-        //mensajes final si acierta o pierde
-        if (aciertos== respuestas.length){
-            System.out.println("¡Enhorabuena, las has acertado todas!");
-        }else{
-            System.out.println("La palabra era: " + palabrasecreta);
+        }
+        if (intentos==0){
+            System.out.println("No te quedan vidas");
+            System.out.println("La palabra correcta es: " + palabrasecreta);
         }
 
     }
