@@ -103,10 +103,12 @@ public class Principal3 {
                     break;
 
                 case 10:
-                    JuegoAhorcado jugar= new JuegoAhorcado();
                     System.out.print("Introduce la palabra a adivinar: ");
                     String palabraSecreta= sc.nextLine();
-                    jugar.Partida(palabraSecreta);
+
+                    JuegoAhorcado ahorcado= new JuegoAhorcado(palabraSecreta, 5);
+                    ahorcado.partida();
+
             }
 
         }while (opcion<=10);
