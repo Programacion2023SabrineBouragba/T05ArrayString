@@ -66,6 +66,7 @@ public class JuegoAhorcado {
         if (!acierto){
             intentos--;
             System.out.println("Letra incorrecta...");
+            munequito();
         }
     }
 
@@ -127,8 +128,64 @@ public class JuegoAhorcado {
             reiniciarPartida();
             partida();
         }
-
     }
 
-}
 
+    /**metodo para ir mostrando el muñequito segun que vidas le quedan al usuaio*/
+    public void munequito(){
+
+        switch (intentos){
+            case 0:
+                System.out.println();
+                System.out.println("Acabas de matar a Ben :(");
+                System.out.println("_____   ");
+                System.out.println("|   |   ");
+                System.out.println("|  (_)   ");
+                System.out.println("|   /|\\   ");
+                System.out.println("|   / \\   ");
+                System.out.println("|_________   ");
+                break;
+
+            case 1:
+                System.out.println("_____   ");
+                System.out.println("|   |   ");
+                System.out.println("|  (_)   ");
+                System.out.println("|  /|\\   ");
+                System.out.println("|  /    ");
+                System.out.println("|_________   ");
+                break;
+
+            case 2:
+                System.out.println("_____   ");
+                System.out.println("|   |   ");
+                System.out.println("|  (_)   ");
+                System.out.println("|  /|\\   ");
+                System.out.println("|         ");
+                System.out.println("|_________");
+                break;
+
+            case 3:
+                System.out.println("_____   ");
+                System.out.println("|   |   ");
+                System.out.println("|  (_)   ");
+                System.out.println("|  /|   ");
+                System.out.println("|         ");
+                System.out.println("|_________   ");
+                break;
+
+            case 4:
+                System.out.println("_____   ");
+                System.out.println("|   |   ");
+                System.out.println("|  (_)   ");
+                System.out.println("|         ");
+                System.out.println("|         ");
+                System.out.println("|_________   ");
+                break;
+
+            default:
+
+                break;
+
+        }
+    }
+}
