@@ -183,9 +183,6 @@ public class JuegoAhorcado {
                 break;
 
             default:
-
-                break;
-
         }
     }
 }
