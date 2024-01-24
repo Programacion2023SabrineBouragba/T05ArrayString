@@ -84,6 +84,9 @@ array [indice-3]= array[0]
 
 ## **Tarea 4**  *Arrays multidimensionales*
 
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/50e9cedd-b6b7-4d00-b1d1-987023043294)
+
+
 - a. grandeTable[5] [3];
 - b. int[][] grandeTable= new int[6][4];
 - c.
