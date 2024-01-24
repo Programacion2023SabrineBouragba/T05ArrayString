@@ -80,3 +80,7 @@ imprime lo siguiente:
 ![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/31d27198-7f72-4657-a966-4bb57221a4b9)
 
 
+
+
+## **Tarea 4**  *Arrays multidimensionales*
+
