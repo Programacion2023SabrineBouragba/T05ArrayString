@@ -89,5 +89,91 @@ array [indice-3]= array[0]
 
 - a. grandeTable[5] [3];
 - b. int[][] grandeTable= new int[6][4];
-- c.
-  - i. 
+
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/7e5b7578-7ff0-4b33-b70c-c0c054ad4bd4)
+
+-a. fila 1(java empieza en 0, por lo que seria la segunda fila), columna 2(java empieza por 0, por lo que es la columna 3), el valor es de 4.
+
+
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/4f8e26de-7322-46fa-a285-8865aeb7b2ff)
+
+- a.
+  - i.  matriz[0][2]= 4
+  - ii.  matriz[1][1]= 2
+  - iii.  matriz[2][5]= error porque en la fila 2 (empezando por 0) no hay columna 5, solo hay           4(java empieza desde 0 a contar)
+  - iv.  matriz[3][0]= error, porque no existe la fila 3
+- b. matriz[3][], porque tiene 3 filas, pero de diferente tamaño, eso se tiene que declarar a parte
+- c. 
+    - matriz[0]= [3]  --> 3 elementos la fila 0
+    - matriz[1]= [2]  --> 2 elementos la fila 1
+    - matriz[2]= [5]  --> 5 elementos la fila 2
+    - se puede utilizar este for para recorrer cada fila y te va mostrando el valor de las           columnas que tiene -->
+      - for (int i=0;i<array.length;i++){ //total filas
+            for(int j=0;j<array[i].length;j++){ //total columna actual
+                System.out.print(array[i][j]);
+            }
+            System.out.println();
+
+
+- e. int[][] matriz= { {1,9,4}, {0,2}, {0,1,2,3,4} };
+        for (int i=0;i<matriz.length;i++){//total filas
+            System.out.print("Fila " + i + " [ ");
+            for(int j=0;j<matriz[i].length;j++){//total columna actual
+                System.out.print(matriz[i][j] + " ");
+
+            }
+            System.out.print("]");
+            System.out.println();
+        }
+
+
+
+  ![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/9c374ee4-251d-4240-a82c-a666463b57a4)
+
+
+- 4. int int2D[][]= new int[5][10];
+        for (int i=0;i<int2D.length;i++){//total filas
+            System.out.print(" [ ");
+            for(int j=0;j<int2D[i].length;j++){//total columna actual
+                System.out.print(int2D[i][j] + " ");
+            }
+            System.out.print("]");
+            System.out.println();
+        }
+
+     
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/be4dc678-87f6-478e-a495-e5430189eeff)
+
+
+
+- 5. int int2D[][]= {{1,2,3}, {2,3,1}, {4,2,7}};
+        for (int i=0;i<int2D.length;i++){//total filas
+            for(int j=0;j<int2D[i].length;j++){//total columna actual
+                int2D[i][j]= int2D[i][j]*2;
+                System.out.print(int2D[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+     ![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/568814f5-0e35-44cb-bc6d-8da70a867e95)
+
+
+
+
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/2b5ae2a3-dd6e-49d7-a37f-02b2232105e0)
+
+- for(int i=0; i< matriz.length; i++){
+            if (matriz[i]== null){
+                System.out.println("Fila vacía");
+            }else{
+                for (int j=0; j<matriz[i].length; j++){
+                    System.out.print(matriz[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+
+  ![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/44d9822e-7e3b-463e-bcb3-5315a0af0fcf)
+
+![image](https://github.com/Programacion2023SabrineBouragba/UD05ArrayString/assets/146069628/6b176e5e-4f1b-4d05-9f7b-3e1c8b25954a)
