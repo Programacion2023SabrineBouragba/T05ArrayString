@@ -18,8 +18,7 @@ public class JuegoAhorcado {
     }
 
 
-    /**metodo donde me mostrar los guiones dependiendo de la palabra secreta introducida,
-     * y me mostrara las vidas que me quedan*/
+    /**metodo donde me mostrar los guiones dependiendo de la palabra secreta introducida*/
     public void guiones(){
         //recorro el array donde esta la palabra secreta, sustituyendo cada celda por guiones
         for (int i=0; i< estado.length; i++){
@@ -134,10 +133,13 @@ public class JuegoAhorcado {
     /**metodo para ir mostrando el muñequito segun que vidas le quedan al usuaio*/
     public void munequito(){
 
+
+        //dependiendo de los intentos que me quedan, me muestra cierta parte del muñequito
         switch (intentos){
             case 0:
+                //no me quedan vidas
                 System.out.println();
-                System.out.println("Acabas de matar a Ben :(");
+                System.out.println(" Acabas de matar a Ben :( ");
                 System.out.println("_____   ");
                 System.out.println("|   |   ");
                 System.out.println("|  (_)   ");
@@ -147,6 +149,7 @@ public class JuegoAhorcado {
                 break;
 
             case 1:
+                //me queda 1 vida
                 System.out.println("_____   ");
                 System.out.println("|   |   ");
                 System.out.println("|  (_)   ");
@@ -156,6 +159,7 @@ public class JuegoAhorcado {
                 break;
 
             case 2:
+                //me quedan 2 vidas
                 System.out.println("_____   ");
                 System.out.println("|   |   ");
                 System.out.println("|  (_)   ");
@@ -165,6 +169,7 @@ public class JuegoAhorcado {
                 break;
 
             case 3:
+                //me quedan 3 vidas
                 System.out.println("_____   ");
                 System.out.println("|   |   ");
                 System.out.println("|  (_)   ");
@@ -174,6 +179,7 @@ public class JuegoAhorcado {
                 break;
 
             case 4:
+                //me quedan 4 vidas
                 System.out.println("_____   ");
                 System.out.println("|   |   ");
                 System.out.println("|  (_)   ");

@@ -108,7 +108,7 @@ public class Principal3 {
 
                     JuegoAhorcado ahorcado= new JuegoAhorcado(palabraSecreta, 5);
                     ahorcado.partida();
-
+                break;
             }
 
         }while (opcion<=10);
