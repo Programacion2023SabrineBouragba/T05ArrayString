@@ -15,54 +15,46 @@ public class Principal4 {
 
             switch (opcion){
                 case 1:
+                    System.out.print("Introduce la semana: ");
+                    int semana= sc.nextInt();
+                    semana-=1;
+                    System.out.print("Introduce el día: ");
+                    int dia= sc.nextInt();
+                    dia-=1;
+                    System.out.print("Introduce el número de ventas: ");
+                    int valor= sc.nextInt();
 
+                    ventas.guardaVentas(semana, dia, valor);
                     break;
                 case 2:
-
+                    System.out.println(ventas);
 
                     break;
                 case 3:
+                    System.out.print("Introduce la semana a comprobar: ");
+                    int semanaEsp= sc.nextInt();
+                    semanaEsp-=1;
+                    String numeros= ventas.totalSemana(semanaEsp);
+                    System.out.println(numeros);
 
 
                     break;
                 case 4:
-
-
+                    System.out.print("Introduce el el día a comprobar (todoas las semanas mismo dia): ");
+                    int diaComp= sc.nextInt();
+                    diaComp-=1;
+                    int resultado= ventas.totalDiaSemana(diaComp);
+                    System.out.println("La suma del día elegido en todas las semanas es de " + resultado + " ventas");
                     break;
+
 
                 case 5:
-
-
-                    break;
-
-                case 6:
-                    //reconocer, amad a la dama, salas
-
-
-                    break;
-
-                case 7:
-
-
-                    break;
-
-                case 8:
-
-
-                    break;
-
-                case 9:
-
-
-                    break;
-
-                case 10:
                     System.out.println("Saliendo... ");
                     break;
 
             }
 
-        }while (opcion<=10);
+        }while (opcion<=5);
 
     }
 
@@ -74,19 +66,14 @@ public class Principal4 {
         do {
             System.out.println("Menú: ");
             System.out.println("1- Guardar ventas.");
-            System.out.println("2- Inicializar ventas.");
-            System.out.println("3- Mostrar ventas.");
-            System.out.println("4- Total de las semana");
-            System.out.println("5- Suma de dia semana");
-            System.out.println("6- Total dia de cada semana");
-            System.out.println("7- Media dia semana");
-            System.out.println("8- Total semana");
-            System.out.println("9- Media semana");
-            System.out.println("10- Salir");
+            System.out.println("2- Mostrar ventas.");
+            System.out.println("3- Total de las semana");
+            System.out.println("4- Total dia de cada semana");
+            System.out.println("5- Salir");
 
             System.out.print("Introduce una opcion del menú: ");
             opcion=sc.nextInt();
-        }while (opcion<0 || opcion>11);
+        }while (opcion<0 || opcion>5);
 
         return opcion;
     }
