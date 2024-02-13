@@ -1,3 +1,5 @@
+package Tarea1y2;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -22,7 +24,7 @@ public class Grupo {
 
         //asigna el total de asignaturas q hay
         this.totalAsignaturas= totalAsignaturas;
-        //array de objetos Asignatura para almacenar las asignaturas, la longitud determinada por totalAsignaturas
+        //array de objetos Tarea1.Asignatura para almacenar las asignaturas, la longitud determinada por totalAsignaturas
         this.asignaturas= new Asignatura[totalAsignaturas];
     }
 

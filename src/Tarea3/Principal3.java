@@ -1,3 +1,7 @@
+package Tarea3;
+
+import Tarea1y2.JuegoAhorcado;
+
 import java.util.Scanner;
 
 public class Principal3 {

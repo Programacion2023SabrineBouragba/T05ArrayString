@@ -1,3 +1,7 @@
+package Tarea4;
+
+import Tarea4.VentasSemanales;
+
 import java.util.Scanner;
 
 public class Principal4 {

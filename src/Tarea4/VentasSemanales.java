@@ -1,3 +1,5 @@
+package Tarea4;
+
 public class VentasSemanales {
     private int numSemanas;
     private int[][] seguimientos;
@@ -22,7 +24,7 @@ public class VentasSemanales {
         seguimientos[semana][dia]= valor;
     }
 
-    /**metodo donde se inicializan los valores del array en 0, igual que el constructor VentasSemanales*/
+    /**metodo donde se inicializan los valores del array en 0, igual que el constructor Tarea4.VentasSemanales*/
     public void inicializarVentas(){
         for (int i=0; i<numSemanas; i++){   //recorremos la fila num de semanas
             for (int j=0; j<7; j++){        //por cada columna de la semana

@@ -1,3 +1,5 @@
+package Tarea1y2;
+
 import java.util.Scanner;
 
 public class Asignatura {
@@ -71,7 +73,7 @@ public class Asignatura {
                 System.out.print("Introduce la nota del alumno " + (i + 1) + ": ");
                 double nota = sn.nextDouble();
 
-                if (i<0 || i>10){
+                if (nota<0 || nota>10){
                     System.out.println("Error: La nota debe estar en el rango de 0 a 10.");
                     /*hago que la i disminuya si se cumple la condicon, por ejemplo si en el
                      * alumno 0 se introcuce un 11, en vez de que el for vaya a por la celda

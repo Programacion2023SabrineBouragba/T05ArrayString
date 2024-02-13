@@ -1,3 +1,5 @@
+package Tarea1y2;
+
 import java.util.Scanner;
 
 public class Principal {
